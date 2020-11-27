@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">删除所有数据</button>
+    <script>
+        let inp = document.querySelector("input");
+        let setBtn = document.querySelector(".set");
+        let getBtn = document.querySelector(".get");
+        let removeBtn = document.querySelector(".remove");
+        let clearBtn = document.querySelector(".clear");
+
+        // sessionStorage.clear();
+        // sessionStorage.removeItem(key);
+        // sessionStorage.setItem(key, value);
+        // sessionStorage.getItem(key);
+
+        // 存储数据
+        // 短期存储，浏览器关闭就消失，周期较短
+        // setBtn.onclick=function(){
+        //     sessionStorage.setItem('name',inp.value);
+        //     sessionStorage.setItem('password', '12345');
+        // }
+        // getBtn.onclick=function(){
+        //     let res=sessionStorage.getItem('name');
+        //     let result=sessionStorage.getItem('password');
+        //     console.log(res,result  );
+        // }
+        // removeBtn.onclick=function(){
+        //     sessionStorage.removeItem('name'); 
+        //     sessionStorage.removeItem('pwd');
+        // }
+        // clearBtn.onclick=function(){
+        //     sessionStorage.clear();
+        // }
+
+        // 演示localStorage
+        // 存储数据
+        setBtn.onclick=function(){
+
+            localStorage.setItem('name',inp.value);
+            localStorage.setItem('password','123456');
+            // sessionStorage.setItem('name',inp.value);
+            // sessionStorage.setItem('password', '12345');
+        }
+        getBtn.onclick=function(){
+
+           let res= localStorage.getItem('name');
+           let result= localStorage.getItem('password');
+           console.log( res,result );
+
+            // let res=sessionStorage.getItem('name');
+            // let result=sessionStorage.getItem('password');
+            // console.log(res,result  );
+        }
+
+        removeBtn.onclick=function(){
+            localStorage.removeItem('name');
+            // sessionStorage.removeItem('name'); 
+            // sessionStorage.removeItem('pwd');
+        }
+        clearBtn.onclick=function(){
+            localStorage.clear();
+            // sessionStorage.clear();
+        }
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
