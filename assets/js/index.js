@@ -62,6 +62,9 @@ function getAvatarAndName() {
         //   没有用户头像，展示文字
         $(".layui-nav-img").hide();
         $(".text-avatar").text(first).show();
+
+
+
       }
     },
     // complete:function (xhr) {
