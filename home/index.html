@@ -4,12 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>个人信息</title>
+
+    <!-- 控制用户访问权限 -->
     <script>
       let token = localStorage.getItem("token");
       if (!token) {
         location.href = "login.html";
       }
     </script>
+
+    <!-- 控制用户访问权限，判断用户是否带有token值 -->
+    <!-- <script>
+  let token=localStorage.getItem('token');
+  if(!token){
+    location.href="login.html";
+  }
+</script> -->
+    <!-- <script>
+  let token=localStorage.getItem('token');
+  if(!token){
+    location.href="login.html";
+  }
+</script> -->
+
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
     <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="/assets/fonts/iconfont.css" />
@@ -29,9 +46,12 @@
               个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="">基本资料</a></dd>
-              <dd><a href="">更换头像</a></dd>
-              <dd><a href="">重置密码</a></dd>
+              <dd> <a href="/user/user_info.html" target="layBody"
+                >基本资料</a></dd>
+              <dd> <a href="/user/user_avatar.html" target="layBody"
+                >更换头像</a></dd>
+              <dd><a href="/user/user_pwd.html" target="layBody"
+                >重置密码</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item">
@@ -59,7 +79,7 @@
             lay-filter="test"
             lay-shrink="all"
           >
-            <li class="layui-nav-item ">
+            <li class="layui-nav-item">
               <a href="/home/dashboard.html" target="layBody"
                 ><span class="iconfont icon-home"></span>首页</a
               >
@@ -71,12 +91,12 @@
               >
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;"
+                  <a href="/article/art_cate.html" target="layBody"
                     ><i class="layui-icon layui-icon-app"></i>文章类别</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="/article/art_list.html" target="layBody"
                     ><i class="layui-icon layui-icon-app"></i>文章列表</a
                   >
                 </dd>
@@ -99,8 +119,8 @@
                   >
                 </dd>
                 <dd>
-                  <a href="/user/user_avatar.html"
-                    target="layBody"><i class="layui-icon layui-icon-app"></i>更换头像</a
+                  <a href="/user/user_avatar.html" target="layBody"
+                    ><i class="layui-icon layui-icon-app"></i>更换头像</a
                   >
                 </dd>
                 <dd>
@@ -116,15 +136,19 @@
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <!-- <iframe src="/home/dashboard.html" name="layBody" frameborder="0"></iframe> -->
+        <iframe
+          src="/article/art_list.html"
+          name="layBody"
+          frameborder="0"
+        ></iframe>
 
-        <iframe src="/user/user_avatar.html" name="layBody" frameborder="0"></iframe>
+        <!-- <iframe src="/user/user_avatar.html" name="layBody" frameborder="0"></iframe> -->
       </div>
 
-      <div class="layui-footer">
-        <!-- 底部固定区域 -->
+      <!-- <div class="layui-footer">
+        
         © www.itheima.com - 黑马程序员
-      </div>
+      </div> -->
     </div>
 
     <script src="/assets/lib/layui/layui.all.js"></script>

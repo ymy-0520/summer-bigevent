@@ -8,3 +8,11 @@
 .layui-card .layui-form{
     width: 500px;
 }
+.layui-card{
+    opacity: .7;
+}
+.layui-body{
+    /* overflow: hidden; */
+    bottom: 0;
+   
+}

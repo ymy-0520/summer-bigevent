@@ -2,6 +2,15 @@
 .layui-card-body {
     width: 500px;
 }
+.layui-card{
+    /* opacity: .9; */
+    background-color: rgba(200,200,200,.7);
+}
+.layui-body{
+    /* overflow: hidden; */
+    bottom: 0 !important;
+   
+}
 
 /* 设置按钮行的样式 */
 .row2 {

@@ -13,6 +13,19 @@ $(function () {
 
   // 1.3 创建裁剪区域
   $image.cropper(options);
+
+  $.ajax({
+    url: "/my/userinfo",
+    success: function (res) {
+      let  ressrc = res.data.user_pic;
+      $image
+        .cropper("destroy") // 销毁旧的裁剪区域
+        .attr("src", ressrc) // 重新设置图片路径
+        .cropper(options);// 重新初始化裁剪区域
+       $('#avatar-card').fadeIn(200); //发送数据之后让面板显示
+    },
+  });
+
   // 点击上传按钮,触发上传按钮
   $("#uploadBtn").click(function () {
     $("#file").click();
